@@ -45,8 +45,9 @@ BOARD_KERNEL_PAGESIZE              := 2048
 BOARD_KERNEL_BASE		   := 0x80000000
 BOARD_KERNEL_SEPARATED_DT          := true
 TARGET_USES_UNCOMPRESSED_KERNEL    := true
-TARGET_KERNEL_SOURCE               := kernel/samsung/j7poplte
-TARGET_KERNEL_CONFIG               := lineageos_j7popltespr_defconfig
+#TARGET_KERNEL_SOURCE               := kernel/samsung/j7poplte
+#TARGET_KERNEL_CONFIG               := lineageos_j7popltespr_defconfig
+TARGET_PREBUILT_KERNEL             := device/samsung/j7popltespr/kernel
 
 # MKBootImg
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/j7popltespr/mkbootimg.mk
@@ -59,7 +60,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 TW_EXCLUDE_SUPERSU := true
 TARGET_RECOVERY_FSTAB := device/samsung/j7popltespr/recovery/root/etc/twrp.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
+#TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_THEME := portrait_hdpi
 TARGET_HW_DISK_ENCRYPTION := true
