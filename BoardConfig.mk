@@ -21,6 +21,9 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# DTB
+TARGET_PREBUILT_DTB := device/samsung/j7popltespr/dt.img
+
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
