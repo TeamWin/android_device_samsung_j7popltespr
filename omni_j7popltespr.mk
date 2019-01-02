@@ -14,28 +14,16 @@
 # limitations under the License.
 #
 
-# Sample: This is where we'd set a backup provider if we had one
-# $(call inherit-product, device/sample/products/backup_overlay.mk)
+# Release name
+PRODUCT_RELEASE_NAME := j7popltespr
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
-
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
-
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
 
 PRODUCT_NAME := omni_j7popltespr
 PRODUCT_DEVICE := j7popltespr
 PRODUCT_BRAND := Samsung
 PRODUCT_MODEL := SM-J727P
 PRODUCT_MANUFACTURER := Samsung
-
-# DTB Work-Around
-PRODUCT_COPY_FILES += \
-    device/samsung/j7popltespr/dt.img:dt.img

@@ -11,8 +11,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_CPU_CORTEX_A53 := true
-
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := j7popltespr,SM-J727P,J727P
 
@@ -20,16 +18,6 @@ TARGET_OTA_ASSERT_DEVICE := j7popltespr,SM-J727P,J727P
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-
-# DTB
-TARGET_PREBUILT_DTB := device/samsung/j7popltespr/dt.img
-
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-TW_INCLUDE_CRYPTO := true
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
@@ -42,15 +30,15 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11374931968
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
-BOARD_DTBTOOL_ARG                  := -2
-BOARD_KERNEL_CMDLINE               := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
-BOARD_KERNEL_IMAGE_NAME		   := Image.gz
-BOARD_KERNEL_PAGESIZE              := 2048
-BOARD_KERNEL_BASE		   := 0x80000000
-BOARD_KERNEL_SEPARATED_DT          := true
-TARGET_KERNEL_SOURCE               := kernel/samsung/msm8953
+BOARD_DTBTOOL_ARG := -2
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --board SRPPI22A000RU
+TARGET_KERNEL_SOURCE := kernel/samsung/msm8953
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CONFIG               := lineageos_j7popltespr_defconfig
+TARGET_KERNEL_CONFIG := lineageos_j7popltespr_defconfig
 
 # MKBootImg
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/j7popltespr/mkbootimg.mk
@@ -58,6 +46,8 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/j7popltespr/mkbootimg.mk
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
 
 # TWRP
 TW_EXCLUDE_SUPERSU := true
@@ -73,6 +63,4 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone1/temp
-
-# Oreo
-TW_NO_LEGACY_PROPS := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
