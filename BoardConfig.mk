@@ -64,3 +64,4 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone1/temp
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_USE_TOOLBOX := true
