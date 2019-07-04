@@ -38,7 +38,7 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --board SRPPI22A000RU
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8953
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CONFIG := lineageos_j7popltespr_defconfig
+TARGET_KERNEL_CONFIG := j7popltespr_defconfig
 
 # MKBootImg
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/j7popltespr/mkbootimg.mk
