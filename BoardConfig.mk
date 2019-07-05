@@ -51,10 +51,10 @@ TARGET_USES_64_BIT_BINDER := true
 
 # TWRP
 TW_EXCLUDE_SUPERSU := true
-TARGET_RECOVERY_FSTAB := device/samsung/j7popltespr/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/j7popltespr/recovery/root/etc/fstab.j7popltespr
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_NO_RADIOIMAGE := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_THEME := portrait_hdpi
 BOARD_SUPPRESS_SECURE_ERASE := true

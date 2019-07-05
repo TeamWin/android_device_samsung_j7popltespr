@@ -5,15 +5,18 @@
 /cache          ext4      /dev/block/platform/soc/7824900.sdhci/by-name/cache
 /boot           emmc      /dev/block/platform/soc/7824900.sdhci/by-name/boot
 /recovery       emmc      /dev/block/platform/soc/7824900.sdhci/by-name/recovery             flags=backup=1
-/misc           emmc      /dev/block/platform/soc/7824900.sdhci/by-name/fota
-/firmware       vfat      /dev/block/platform/soc/7824900.sdhci/by-name/apnhlos              flags=display="Firmware";mounttodecrypt
-/firmware-modem vfat      /dev/block/platform/soc/7824900.sdhci/by-name/modem                flags=display="Modem"
+
+/misc           emmc      /dev/block/platform/soc/7824900.sdhci/by-name/misc
+/firmware       vfat      /dev/block/platform/soc/7824900.sdhci/by-name/apnhlos              flags=mounttodecrypt
+/firmware-modem vfat      /dev/block/platform/soc/7824900.sdhci/by-name/modem                
 /frp            emmc      /dev/block/platform/soc/7824900.sdhci/by-name/config               flags=display="FRP";backup=1
 /persist        ext4      /dev/block/platform/soc/7824900.sdhci/by-name/persist              flags=display="Persist";backup=1
 /efs1           emmc      /dev/block/platform/soc/7824900.sdhci/by-name/efs          	     flags=backup=1;display="EFS"
 /efs2           emmc      /dev/block/platform/soc/7824900.sdhci/by-name/modemst1     	     flags=backup=1;subpartitionof=/efs1
 /efs3           emmc      /dev/block/platform/soc/7824900.sdhci/by-name/modemst2      	     flags=backup=1;subpartitionof=/efs1
-/modem          emmc      /dev/block/platform/soc/7824900.sdhci/by-name/apnhlos              flags=display="Apnhlos"
-/mdm            emmc      /dev/block/platform/soc/7824900.sdhci/by-name/modem                flags=display="MDM"
+
+/modem          emmc      /dev/block/platform/soc/7824900.sdhci/by-name/modem                flags=backup=1
+/apnhlos        emmc      /dev/block/platform/soc/7824900.sdhci/by-name/apnhlos              flags=backup=1
+
 /usb-otg        auto      /dev/block/sda1         /dev/block/sda                             flags=display="USB-OTG";storage;wipeingui;removable
 /external_sd    auto      /dev/block/mmcblk1p1                                               flags=display="Micro SD Card";storage;wipeingui;removable
